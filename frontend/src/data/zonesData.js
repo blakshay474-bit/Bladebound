@@ -1,0 +1,57 @@
+export const zonesData = {
+  'ruins': {
+    id: 'ruins',
+    name: "THE COLOSSEUM (KING'S RUINS)",
+    hazard: 'FATAL HAZARD',
+    hazardColor: 'bg-primary-container text-on-primary-container',
+    loot: 'MYTHIC RELICS (T5)',
+    choke: 'CROSSFIRE APEX',
+    desc: "Colosseum of fractured obsidian masonry and gladiatorial sand. Center drop zone for Tier-V relic weapons. High skirmish frequency within seconds of drop.",
+    icon: 'swords',
+    coords: 'top-[36%] left-[36%]'
+  },
+  'iron-fortress': {
+    id: 'iron-fortress',
+    name: 'MOUNTAIN CITADEL (IRON FORTRESS)',
+    hazard: 'DEFENSIVE CHOKE',
+    hazardColor: 'bg-secondary-container text-on-secondary-container',
+    loot: 'SIEGE ARMOUR (T4)',
+    choke: 'NARROW GATEWAYS',
+    desc: 'High fortified stone bastion towering above the misty crags. Massive gatehouse with portcullis traps and high vantage battlements.',
+    icon: 'fort',
+    coords: 'top-[16%] right-[28%]'
+  },
+  'bloodstone': {
+    id: 'bloodstone',
+    name: 'CRIMSON BLOODSTONE CANYON',
+    hazard: 'HIGH CASUALTY',
+    hazardColor: 'bg-primary-container text-on-primary-container',
+    loot: 'CURSED WEAPONS (T5)',
+    choke: 'OPEN TRENCH CLASH',
+    desc: 'Sunken crimson canyon drenched in bloodstone mists. Unrelenting warrior encounters with volcanic bloodstone veins.',
+    icon: 'local_fire_department',
+    coords: 'top-[44%] right-[25%]'
+  },
+  'forest': {
+    id: 'forest',
+    name: 'WRAITHWOOD (DARK MISTY FOREST)',
+    hazard: 'AMBUSH RISK',
+    hazardColor: 'bg-surface-bright text-on-surface',
+    loot: 'LIGHTWEIGHT RUNICS (T3)',
+    choke: 'DENSE PINE COVER',
+    desc: 'Ancient petrified pines shrouded in rolling fog. Footstep sound radius is halved, creating the premier drop zone for stealth assassins.',
+    icon: 'forest',
+    coords: 'bottom-[16%] left-[56%]'
+  },
+  'bridge': {
+    id: 'bridge',
+    name: 'CHASM BRIDGE (ABYSSAL CROSSING)',
+    hazard: 'ENVIRONMENTAL FALL',
+    hazardColor: 'bg-secondary-container text-on-secondary-container',
+    loot: 'ANCIENT TALISMANS (T4)',
+    choke: 'SINGLE-FILE CROSSING',
+    desc: 'Treacherous narrow stone bridge arching over the bottomless abyssal chasm. One mistimed dodge sends opponents into the void.',
+    icon: 'alt_route',
+    coords: 'bottom-[22%] left-[26%]'
+  }
+};

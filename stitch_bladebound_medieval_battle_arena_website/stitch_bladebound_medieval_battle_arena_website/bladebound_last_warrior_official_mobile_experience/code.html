@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&amp;family=Plus+Jakarta+Sans:wght@400;500;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-highest": "#343538", "primary-container": "#dc2626", "background": "#121316", "on-secondary-fixed": "#2f1500", "on-surface-variant": "#e6bdb8", "surface": "#121316", "outline-variant": "#5c403c", "primary-fixed-dim": "#ffb4ab", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#ffb3ac", "tertiary-fixed": "#ffdad6", "on-primary-container": "#fff6f5", "on-secondary-fixed-variant": "#6e3900", "outline": "#ac8884", "on-surface": "#e3e2e6", "secondary-fixed-dim": "#ffb77d", "primary-fixed": "#ffdad6", "on-secondary": "#4d2600", "secondary-container": "#d97707", "secondary": "#ffb77d", "surface-tint": "#ffb4ab", "on-primary": "#690005", "tertiary-container": "#d33533", "on-secondary-container": "#432100", "surface-container-lowest": "#0d0e11", "on-background": "#e3e2e6", "inverse-primary": "#bf0715", "on-primary-fixed": "#410002", "on-tertiary-container": "#fff5f4", "surface-container": "#1f1f23", "error": "#ffb4ab", "secondary-fixed": "#ffdcc3", "primary": "#ffb4ab", "on-tertiary": "#680008", "on-tertiary-fixed-variant": "#930010", "inverse-on-surface": "#2f3034", "inverse-surface": "#e3e2e6", "surface-dim": "#121316", "on-error": "#690005", "tertiary": "#ffb3ac", "on-primary-fixed-variant": "#93000b", "surface-container-high": "#292a2d", "surface-container-low": "#1b1b1f", "on-tertiary-fixed": "#410003", "surface-variant": "#343538", "error-container": "#93000a", "surface-bright": "#38393c" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xl": "3rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "gutter-mobile": "0.75rem", "space-xs": "0.5rem", "space-2xs": "0.25rem", "margin-mobile": "1rem", "space-lg": "1.5rem", "space-sm": "0.75rem", "space-3xl": "4.5rem", "margin-desktop": "3rem", "space-xl": "2rem" }, fontFamily: { "headline-md": ["Cinzel Decorative"], "label-tactical": ["Space Grotesk"], "headline-xl-mobile": ["Cinzel Decorative"], "display-hero": ["Cinzel Decorative"], "caption-sm": ["Plus Jakarta Sans"], "stat-mono": ["Space Grotesk"], "headline-xl": ["Cinzel Decorative"], "body-md": ["Plus Jakarta Sans"], "display-hero-mobile": ["Cinzel Decorative"], "headline-sm": ["Space Grotesk"], "body-lg": ["Plus Jakarta Sans"] }, fontSize: { "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "0.04em", fontWeight: "700" }], "label-tactical": ["12px", { lineHeight: "16px", letterSpacing: "0.14em", fontWeight: "700" }], "headline-xl-mobile": ["28px", { lineHeight: "34px", letterSpacing: "0.04em", fontWeight: "700" }], "display-hero": ["64px", { lineHeight: "72px", letterSpacing: "0.08em", fontWeight: "900" }], "caption-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }], "stat-mono": ["15px", { lineHeight: "18px", letterSpacing: "0.06em", fontWeight: "700" }], "headline-xl": ["42px", { lineHeight: "50px", letterSpacing: "0.05em", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "22px", letterSpacing: "0.01em", fontWeight: "400" }], "display-hero-mobile": ["38px", { lineHeight: "44px", letterSpacing: "0.06em", fontWeight: "900" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0.08em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "26px", letterSpacing: "0.01em", fontWeight: "400" }] } } } }</script><style>@layer base { html, body { width: 100vw; min-height: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } .drawer-toggle:checked ~ #tactical-drawer { transform: translateX(0); } .drawer-toggle:checked ~ #drawer-backdrop { opacity: 1; pointer-events: auto; }</style></head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><input class="drawer-toggle hidden" id="nav-drawer-toggle" type="checkbox"/><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0"><label class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary cursor-pointer active:scale-95 transition-transform shrink-0" for="nav-drawer-toggle"><span class="material-symbols-outlined text-[24px]">menu</span></label><div class="flex items-center gap-space-2xs min-w-0"><img alt="BLADEBOUND Crest Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XzOSNLh_IPhxiJzdDTK997dnVpUBuAk_1HpvuN68LtvWc797IQ_n08Fo3gYhixPuHhl_iPJteZ6UlmROElkgI3hLIzz_d30H673LoxV6EMderc-to92T_csvvw1shr6Ef5CRvgr73HyCFuB8bmAF00pu4WtY7En1QMu5ep6WQyE8vHt1nVtkbeJL1Q368czju55qfyTdNokA-hqVonmAfvmLrWS53foa0bhDqwCQshv22uRRoKyPS4F-I"/><div class="flex flex-col truncate"><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider leading-tight truncate">BLADEBOUND</span><span class="font-caption-sm text-caption-sm text-primary-fixed-dim uppercase tracking-widest leading-none truncate">Home</span></div></div></div><div class="flex items-center gap-space-xs shrink-0"><a class="h-10 px-space-sm bg-gradient-to-b from-primary-container to-on-primary flex items-center justify-center rounded gap-space-2xs shadow-[0_0_16px_rgba(220,38,38,0.4)] active:scale-95 transition-all" data-path="play-now" href="#"><span class="material-symbols-outlined text-on-primary-container text-[16px]">swords</span><span class="font-label-tactical text-label-tactical uppercase text-on-primary-container tracking-wider hidden xs:inline">PLAY NOW</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><div class="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300" id="drawer-backdrop"></div><aside class="fixed top-0 left-0 h-full w-[80vw] max-w-[320px] z-50 bg-surface-container-low/95 backdrop-blur-2xl transform -translate-x-full transition-transform duration-300 ease-out flex flex-col pt-safe pb-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]" id="tactical-drawer"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-2xs"><img alt="BLADEBOUND Crest Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XzOSNLh_IPhxiJzdDTK997dnVpUBuAk_1HpvuN68LtvWc797IQ_n08Fo3gYhixPuHhl_iPJteZ6UlmROElkgI3hLIzz_d30H673LoxV6EMderc-to92T_csvvw1shr6Ef5CRvgr73HyCFuB8bmAF00pu4WtY7En1QMu5ep6WQyE8vHt1nVtkbeJL1Q368czju55qfyTdNokA-hqVonmAfvmLrWS53foa0bhDqwCQshv22uRRoKyPS4F-I"/><span class="font-headline-sm text-headline-sm uppercase text-primary-fixed-dim">WAR FORGE</span></div><label class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface cursor-pointer" for="nav-drawer-toggle"><span class="material-symbols-outlined text-[24px]">close</span></label></div><div class="flex-1 overflow-y-auto px-gutter-mobile py-space-sm flex flex-col gap-space-xs"><a class="flex items-center gap-space-sm px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" data-path="home" href="#"><span class="material-symbols-outlined text-[20px]">fort</span><span class="font-label-tactical text-label-tactical uppercase">HOME</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" data-path="battlefield" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span class="font-label-tactical text-label-tactical uppercase">BATTLEFIELD</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" data-path="warriors" href="#"><span class="material-symbols-outlined text-[20px]">shield_person</span><span class="font-label-tactical text-label-tactical uppercase">WARRIORS</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" data-path="armoury" href="#"><span class="material-symbols-outlined text-[20px]">hardware</span><span class="font-label-tactical text-label-tactical uppercase">ARMOURY</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" data-path="combat-hud" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span class="font-label-tactical text-label-tactical uppercase">HUD</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" data-path="game-modes" href="#"><span class="material-symbols-outlined text-[20px]">swords</span><span class="font-label-tactical text-label-tactical uppercase">MODES</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" data-path="leaderboards" href="#"><span class="material-symbols-outlined text-[20px]">military_tech</span><span class="font-label-tactical text-label-tactical uppercase">RANKINGS</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" data-path="warrior-profile" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span class="font-label-tactical text-label-tactical uppercase">PROFILE</span></a></div><div class="p-gutter-mobile"><div class="p-space-sm bg-surface-container rounded flex flex-col gap-space-2xs"><span class="font-caption-sm text-caption-sm text-secondary uppercase">REALM SECTOR: EU-7</span><span class="font-stat-mono text-stat-mono text-on-surface">WAR-STATUS: ONSLAUGHT</span></div></div></aside><main class="flex flex-col relative w-full pt-16 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface overflow-x-hidden relative">
+<!-- Floating Cinematic Atmospheric Canvas -->
+<div class="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+<div class="absolute w-2 h-2 rounded-full bg-primary-container blur-[1px] opacity-70 animate-ping top-1/4 left-1/5" style="animation-duration: 4s;"></div>
+<div class="absolute w-1.5 h-1.5 rounded-full bg-secondary-container blur-[0.5px] opacity-60 animate-pulse top-2/3 right-1/4" style="animation-duration: 3s;"></div>
+<div class="absolute w-1 h-1 rounded-full bg-primary-fixed blur-[0.5px] opacity-50 animate-bounce top-1/2 left-3/4" style="animation-duration: 6s;"></div>
+</div>
+<!-- 1. FULL-SCREEN CINEMATIC HERO SECTION -->
+<section class="relative w-full min-h-[92vh] flex flex-col justify-end overflow-hidden pb-space-xl">
+<!-- Hero Image with High Stakes Scrim & Vignette -->
+<div class="absolute inset-0 z-0">
+<img alt="Armoured Knight holding a glowing runic greatsword on an ashen battlefield with burning castle" class="w-full h-full object-cover object-center filter brightness-90 contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYScm7wv_eJJsHCkN8l30avVkYgrnppwcFdmoapISxLh1Zr-vbwJ6P2MlTrhq1D-0U4P3HkRUe_fFLkYSu_Zj1bpQGy4vvYOV1m2bK_TLn-vOuPIfa6SD1NBpcnsfB6ov8WeLWgHDVkBmsaTpd5RxEuWz3dqJmndTSuXQ4Mh7-NyHd709HfwUiP5pvW_lG8KyD3r3eyZBM94sD0UtQk1hAQdD7ZcY273iFOym5GA1XHD6QT6KvDQJo"/>
+<!-- Visceral Ember & Blood Vignette Gradients -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-surface/40"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/80 via-transparent to-surface/80"></div>
+<div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-surface to-transparent"></div>
+<!-- Stylized Peripheral Gore Rim Glow -->
+<div class="absolute inset-0 pointer-events-none shadow-[inset_0_0_80px_rgba(220,38,38,0.35)]"></div>
+</div>
+<!-- Live Status Banner -->
+<div class="relative z-20 px-gutter-mobile mb-space-sm">
+<div class="inline-flex items-center gap-space-2xs px-space-sm py-1 rounded bg-surface-container-low/80 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-stat-mono text-caption-sm uppercase tracking-widest text-primary-fixed-dim">ARENA EU-CENTRAL • ONSLAUGHT PROTOCOL</span>
+</div>
+</div>
+<!-- Hero Titles & Dramatic Framing -->
+<div class="relative z-20 px-gutter-mobile flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-2xs text-secondary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-secondary">SEASON IV: THE ASHEN ECLIPSE</span>
+</div>
+<h1 class="font-display-hero-mobile text-display-hero-mobile uppercase text-on-surface tracking-wider drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+        BLADEBOUND
+      </h1>
+<p class="font-headline-sm text-headline-sm uppercase text-primary-fixed-dim tracking-widest drop-shadow-[0_2px_8px_rgba(220,38,38,0.6)]">
+        ONLY THE LAST BLADE STANDS
+      </p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-space-2xs drop-shadow leading-relaxed">
+        Enter the desolate ruins of Valgoth. Master brutal medieval swordplay, guard against catastrophic executions, and outlast 49 rival champions in merciless steel combat.
+      </p>
+<!-- Tactical CTA Group -->
+<div class="flex flex-col sm:flex-row items-stretch gap-space-xs mt-space-md">
+<button class="h-14 px-space-lg bg-gradient-to-r from-primary-container via-on-primary to-primary-container rounded shadow-[0_0_28px_rgba(220,38,38,0.55)] flex items-center justify-center gap-space-xs active:scale-95 transition-all text-on-primary-container group" id="cta-enter-battle">
+<span class="material-symbols-outlined text-[24px] text-on-primary-container group-hover:rotate-45 transition-transform">swords</span>
+<span class="font-headline-sm text-headline-sm tracking-wider uppercase">ENTER BATTLEFIELD</span>
+</button>
+<button class="h-12 px-space-md bg-surface-container-high/90 backdrop-blur-md rounded flex items-center justify-center gap-space-xs active:scale-95 transition-all text-on-surface hover:bg-surface-bright">
+<span class="material-symbols-outlined text-[22px] text-secondary">play_circle</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider">WATCH TEASER (4K)</span>
+</button>
+</div>
+<!-- Live Arena Ticker -->
+<div class="mt-space-md p-space-xs rounded bg-surface-container-low/90 backdrop-blur-lg flex items-center justify-around text-center">
+<div class="flex flex-col">
+<span class="font-stat-mono text-stat-mono text-primary">48 / 50</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant uppercase">Warriors Alive</span>
+</div>
+<div class="w-px h-8 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-stat-mono text-stat-mono text-secondary">MATCH READY</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant uppercase">Queue: 00:04</span>
+</div>
+<div class="w-px h-8 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-stat-mono text-stat-mono text-primary-fixed-dim">2.4%</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant uppercase">Survival Rate</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. INTERACTIVE BATTLEFIELD ARENA MAP SECTION -->
+<section class="w-full px-gutter-mobile py-space-xl flex flex-col gap-space-md bg-surface-container-lowest">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-2xs text-primary">
+<span class="material-symbols-outlined text-[18px]">explore</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-primary">TERRITORY TELEMETRY</span>
+</div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile uppercase text-on-surface tracking-wide">
+        ARENA OF THE DAMNED
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Tap combat zones to deploy tactical reconnaissance. Study hazardous drop zones before entering the fog.
+      </p>
+</div>
+<!-- Map Canvas Card with Pin Nodes -->
+<div class="relative w-full h-80 rounded overflow-hidden shadow-2xl bg-surface-container-low">
+<!-- Stylized Medieval Dark Map Texture -->
+<div class="w-full h-full bg-cover bg-center filter saturate-75 brightness-75" data-alt="Overhead tactical dark fantasy parchment map of ruined medieval war zones, stone fortress, misty pine woods, dark river abyss bridge, blood-red scorched volcanic canyon, gothic cartography style with subtle glowing crimson coordinate lines" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlEbjym8-ItUC-rOFyCUSb6E3UOzGVph1-ph9ha0fViSq3IzTi3k8bKVkc42zhGh8Bmow_E-HOo9mWu-JruQmoaRXfWRLdluoeFAdar46ZSpSMjXEgtuVEl0-215B-9wPNn2PMUBIKT4fk6dhtN2YozrlMcw7OFiWbIG-bL3CgABWdJ779wcN0yKlAjleM1yCZGEm3TlujradrmPayNhQU0l-O1_kzKBf82ZpeEiMuzNQwtbOwJGve')"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container-lowest/30 via-transparent to-surface-container-lowest/90"></div>
+<!-- Shrinking Safe Zone Ring Indicator -->
+<div class="absolute inset-8 rounded-full border-2 border-dashed border-primary/40 animate-pulse pointer-events-none"></div>
+<!-- Tactical Pins -->
+<button class="absolute top-12 left-10 w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_16px_rgba(220,38,38,0.8)] active:scale-90 transition-transform" onclick="updateZoneInfo('iron-fortress')">
+<span class="material-symbols-outlined text-[18px]">fort</span>
+</button>
+<button class="absolute top-28 right-14 w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-[0_0_16px_rgba(217,119,6,0.8)] active:scale-90 transition-transform" onclick="updateZoneInfo('bloodstone')">
+<span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+</button>
+<button class="absolute bottom-20 left-16 w-9 h-9 rounded-full bg-surface-bright text-on-surface flex items-center justify-center shadow-md active:scale-90 transition-transform" onclick="updateZoneInfo('forest')">
+<span class="material-symbols-outlined text-[18px]">forest</span>
+</button>
+<button class="absolute top-36 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_20px_rgba(220,38,38,1)] animate-bounce" onclick="updateZoneInfo('ruins')">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">swords</span>
+</button>
+<button class="absolute bottom-10 right-20 w-9 h-9 rounded-full bg-surface-bright text-on-surface flex items-center justify-center shadow-md active:scale-90 transition-transform" onclick="updateZoneInfo('bridge')">
+<span class="material-symbols-outlined text-[18px]">alt_route</span>
+</button>
+<!-- Pin Legend Overlay -->
+<div class="absolute bottom-3 left-3 px-space-xs py-1 rounded bg-surface-container-low/90 backdrop-blur-md flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-caption-sm text-caption-sm text-on-surface tracking-wider">ACTIVE ZONE FOCUS</span>
+</div>
+</div>
+<!-- Active Zone Card Display -->
+<div class="p-space-md rounded bg-surface-container flex flex-col gap-space-xs shadow-xl transition-all duration-300" id="zone-display-card">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[24px]" id="zone-icon">swords</span>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface" id="zone-name">KING'S RUINS</h3>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container font-label-tactical text-caption-sm uppercase" id="zone-hazard">FATAL HAZARD</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant" id="zone-desc">
+        Colosseum of fractured obsidian masonry and royal crypt shrines. Center spawn point for Tier-V relic weapons. High skirmish frequency within seconds of drop.
+      </p>
+<div class="grid grid-cols-2 gap-space-xs mt-space-2xs pt-space-xs">
+<div class="p-space-xs rounded bg-surface-container-high flex flex-col">
+<span class="font-caption-sm text-caption-sm text-on-surface-variant uppercase">LOOT TIER</span>
+<span class="font-stat-mono text-stat-mono text-secondary" id="zone-loot">MYTHIC RELICS (T5)</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container-high flex flex-col">
+<span class="font-caption-sm text-caption-sm text-on-surface-variant uppercase">TACTICAL HAZARD</span>
+<span class="font-stat-mono text-stat-mono text-primary" id="zone-choke">CROSSFIRE APEX</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. WARRIOR SELECTION & ARCHETYPES -->
+<section class="w-full px-gutter-mobile py-space-xl flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-2xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">shield_person</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-secondary">CHAMPION ROSTER</span>
+</div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile uppercase text-on-surface tracking-wide">
+        CHOOSE YOUR BLOODLINE
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Each warrior wields custom weight telemetry, stamina penalties, and unique steel-forged martial rites.
+      </p>
+</div>
+<!-- Warrior Select Tabs -->
+<div class="flex gap-space-xs overflow-x-auto pb-space-xs no-scrollbar">
+<button class="px-space-md py-space-xs rounded bg-primary-container text-on-primary-container font-label-tactical text-label-tactical uppercase whitespace-nowrap active:scale-95 transition-all" id="tab-knight" onclick="selectWarrior('knight')">THE KNIGHT</button>
+<button class="px-space-md py-space-xs rounded bg-surface-container text-on-surface-variant font-label-tactical text-label-tactical uppercase whitespace-nowrap active:scale-95 transition-all" id="tab-berserker" onclick="selectWarrior('berserker')">THE BERSERKER</button>
+<button class="px-space-md py-space-xs rounded bg-surface-container text-on-surface-variant font-label-tactical text-label-tactical uppercase whitespace-nowrap active:scale-95 transition-all" id="tab-sentinel" onclick="selectWarrior('sentinel')">THE SENTINEL</button>
+<button class="px-space-md py-space-xs rounded bg-surface-container text-on-surface-variant font-label-tactical text-label-tactical uppercase whitespace-nowrap active:scale-95 transition-all" id="tab-duelist" onclick="selectWarrior('duelist')">THE DUELIST</button>
+<button class="px-space-md py-space-xs rounded bg-surface-container text-on-surface-variant font-label-tactical text-label-tactical uppercase whitespace-nowrap active:scale-95 transition-all" id="tab-warden" onclick="selectWarrior('warden')">THE WARDEN</button>
+</div>
+<!-- Warrior Showcase Display Card -->
+<div class="p-space-md rounded bg-surface-container-low flex flex-col gap-space-md shadow-2xl relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-caption-sm text-caption-sm uppercase text-secondary tracking-widest" id="warrior-archetype">BALANCED VANGUARD</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface" id="warrior-title">THE KNIGHT</h3>
+<span class="font-body-md text-body-md text-on-surface-variant" id="warrior-weapon">Bastard Sword &amp; Kite Shield</span>
+</div>
+<div class="px-space-xs py-1 rounded bg-surface-container-highest text-secondary-fixed-dim font-stat-mono text-caption-sm uppercase">
+          DIFFICULTY: NOVICE
+        </div>
+</div>
+<!-- Warrior Illustration Placeholder -->
+<div class="relative w-full h-56 rounded overflow-hidden shadow-inner bg-surface-container-highest">
+<img class="w-full h-full object-cover object-center" data-alt="Full body gothic render of an elite plate armor knight holding a weathered steel longsword in two-handed stance, cinematic blood splatter on breastplate, glowing slit helmet, dark smoke background with glowing embers" id="warrior-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe2B_tkrpmUKnbsR1Tc2bkLjtGV01vFYh9q35mYnTAQ3RGh68rhWsEu5EUPVLvv7rK6IG8RS96TVesF8vgQXbwalsRrBneCK7p3m0vC2aPLG3EFM8hBzmo__c--g6K_gTLd3Sfz1h035DzhgLxFECb8i7FK8aeHdn1KCJD7Z5vcau3Llwrt2_nrx_4OGPo_0axchg8-IkOQ2C5Cq-c3LVf9pgG64EGo5Hn2TwsnoxEYXS5ZMXGe85v"/>
+<div class="absolute bottom-2 left-2 px-space-xs py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_fix_high</span>
+<span class="font-label-tactical text-caption-sm uppercase text-on-surface" id="warrior-ability">ABILITY: IRON VOW</span>
+</div>
+</div>
+<!-- Dynamic Stat Channels -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-tactical text-caption-sm uppercase">
+<span class="text-on-surface-variant">ATTACK POWER</span>
+<span class="text-primary font-stat-mono" id="val-atk">78 / 100</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-500" id="bar-atk" style="width: 78%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-tactical text-caption-sm uppercase">
+<span class="text-on-surface-variant">DEFENCE INTEGRITY</span>
+<span class="text-secondary font-stat-mono" id="val-def">82 / 100</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary-container transition-all duration-500" id="bar-def" style="width: 82%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-tactical text-caption-sm uppercase">
+<span class="text-on-surface-variant">AGILITY / DODGE SPEED</span>
+<span class="text-on-surface font-stat-mono" id="val-spd">70 / 100</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-on-surface-variant transition-all duration-500" id="bar-spd" style="width: 70%;"></div>
+</div>
+</div>
+</div>
+<!-- Warrior Equip CTA -->
+<button class="h-12 w-full bg-gradient-to-r from-primary-container to-on-primary text-on-primary-container rounded font-label-tactical text-label-tactical uppercase tracking-widest flex items-center justify-center gap-space-xs shadow-[0_0_20px_rgba(220,38,38,0.4)] active:scale-95 transition-all" id="btn-equip-warrior" onclick="lockInWarrior()">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+<span>SELECT THIS WARRIOR</span>
+</button>
+</div>
+</section>
+<!-- 4. ARMOURY & MELEE ARSENAL -->
+<section class="w-full px-gutter-mobile py-space-xl flex flex-col gap-space-md bg-surface-container-lowest">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-2xs text-primary">
+<span class="material-symbols-outlined text-[18px]">hardware</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-primary">THE BLACKSMITH VAULT</span>
+</div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile uppercase text-on-surface tracking-wide">
+        ARMOURY &amp; ARSENAL
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Inspect tempered steel and bloodstone blades forged in dragon kiln fires.
+      </p>
+</div>
+<!-- Weapon Category Filter Pills -->
+<div class="flex gap-space-xs overflow-x-auto pb-space-xs no-scrollbar">
+<span class="px-space-sm py-1 rounded bg-secondary-container text-on-secondary-container font-label-tactical text-caption-sm uppercase whitespace-nowrap">ALL BLADES</span>
+<span class="px-space-sm py-1 rounded bg-surface-container text-on-surface-variant font-label-tactical text-caption-sm uppercase whitespace-nowrap">LONG SWORDS</span>
+<span class="px-space-sm py-1 rounded bg-surface-container text-on-surface-variant font-label-tactical text-caption-sm uppercase whitespace-nowrap">GREAT SWORDS</span>
+<span class="px-space-sm py-1 rounded bg-surface-container text-on-surface-variant font-label-tactical text-caption-sm uppercase whitespace-nowrap">DUAL WEAPONS</span>
+<span class="px-space-sm py-1 rounded bg-surface-container text-on-surface-variant font-label-tactical text-caption-sm uppercase whitespace-nowrap">SHIELDS</span>
+</div>
+<!-- Weapon Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Item 1: Legendary Longsword -->
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-space-xs shadow-lg relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-stat-mono text-caption-sm uppercase">LEGENDARY</span>
+<span class="font-stat-mono text-stat-mono text-primary">PWR 94</span>
+</div>
+<div class="relative w-full h-32 rounded bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Gothic detailed close-up shot of a glowing blood-red runic longsword with dark damascus steel blade resting on an anvil with embers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm9MalMzo5h7jD-Daesv0UyHQ4sB9gYlFfhbSYvx5aW1-wyFY0I_y0g0DLdRrIKwrp5ieqch74QFuFVdTEp0bVjrcImUPrnJ2jgdhHgc098mu1rhKrD_9j7F5-NZoM7FYNdNagEu9lokUIIkfqACj0wyc1jxuMcFHsS73RvFxBlDumLYqYy5c4yUzarppZqof_Sj2KZD--EdmtYYXXq7u86hmvEuMpT2wDWnkHHv4hQngdsjRR6NBn"/>
+<div class="absolute bottom-1 right-2 font-caption-sm text-caption-sm text-secondary uppercase tracking-widest">TIER V</div>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">NIGHTFALL BLADE</h4>
+<span class="font-caption-sm text-caption-sm text-primary">Special: Shadow Bleed (12 DPS)</span>
+</div>
+<button class="h-9 w-full bg-surface-container-high hover:bg-surface-bright text-on-surface rounded font-label-tactical text-caption-sm uppercase flex items-center justify-center gap-1 active:scale-95 transition-all" onclick="inspectWeapon('NIGHTFALL BLADE', 'Blood-forged single-edged weapon that siphons enemy stamina into crimson sparks upon parrying.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>INSPECT ARTIFACT</span>
+</button>
+</div>
+<!-- Item 2: Epic Greatsword -->
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-space-xs shadow-lg relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container font-stat-mono text-caption-sm uppercase">EPIC</span>
+<span class="font-stat-mono text-stat-mono text-primary">PWR 89</span>
+</div>
+<div class="relative w-full h-32 rounded bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Massive chipped medieval Zweihander greatsword with heavy pommel wrapped in leather and runic silver engraving" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnng1njMgLUwhfLnEVsLG5xe3ed3LkMfwUeU9SuvRV771kf0A53cz1CENe12RuyM3063AoIa_ZI9drkGJ07_TlV_to-kwY3JTx8KNREpmu7SLXX-CBoijIiESEIVwbjTaB7m36ZvKL33gnpg3sywkMBCZ-pelsh1STzxPw0oUsitFAKBDmyncS6u_kktCGy6Iw5AENYaaN0xcw8fh2i4zMPeo5ttUDYM3KTXdlb9xcZbn46tAAIPF-"/>
+<div class="absolute bottom-1 right-2 font-caption-sm text-caption-sm text-secondary uppercase tracking-widest">TIER IV</div>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">KINGSLAYER</h4>
+<span class="font-caption-sm text-caption-sm text-secondary">Special: Crown Shatter (Guard Break)</span>
+</div>
+<button class="h-9 w-full bg-surface-container-high hover:bg-surface-bright text-on-surface rounded font-label-tactical text-caption-sm uppercase flex items-center justify-center gap-1 active:scale-95 transition-all" onclick="inspectWeapon('KINGSLAYER', 'Crushes enemy shields instantly with full power vertical overhead strikes.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>INSPECT ARTIFACT</span>
+</button>
+</div>
+<!-- Item 3: Rare Dual Blades -->
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-space-xs shadow-lg relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 rounded bg-surface-bright text-on-surface font-stat-mono text-caption-sm uppercase">RARE</span>
+<span class="font-stat-mono text-stat-mono text-primary">PWR 76</span>
+</div>
+<div class="relative w-full h-32 rounded bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Pair of notched heavy iron cleaving war axes crossed over dark stone tablet with blood spatters" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXAIf5H-a4nm5vhD9lrZJFDL-IR85LMivgI9A3f84qxZolCkEGbT_9sfL_y32zyoXemeUR3rfS-tI7JPtLp_Xf477h6HbVKzkX-xomr3cyx0iAbo__a5Ee51bmN9mg6tMf9pYqVY36DpiVZr94tHf2oxDxkSUmxAUkIHCQiXCQ0qcxGAzmLNca1sV7etozsdGi1sNSLd7fDblB2AYNx_nRdYM6P4inKluBH4eFQWRVs5k0bxDgDRcH"/>
+<div class="absolute bottom-1 right-2 font-caption-sm text-caption-sm text-secondary uppercase tracking-widest">TIER III</div>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">IRON REAVER</h4>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant">Special: Cleave Frenzy (+15% SPD)</span>
+</div>
+<button class="h-9 w-full bg-surface-container-high hover:bg-surface-bright text-on-surface rounded font-label-tactical text-caption-sm uppercase flex items-center justify-center gap-1 active:scale-95 transition-all" onclick="inspectWeapon('IRON REAVER', 'Lightweight butcher axes balanced for continuous whirlwind slashes.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>INSPECT ARTIFACT</span>
+</button>
+</div>
+<!-- Item 4: Legendary Tower Shield -->
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-space-xs shadow-lg relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-stat-mono text-caption-sm uppercase">LEGENDARY</span>
+<span class="font-stat-mono text-stat-mono text-secondary">DEF 96</span>
+</div>
+<div class="relative w-full h-32 rounded bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Immense dragon-crested iron pavise tower shield scorched by dragon breath with glowing bronze studs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL2aBExTE_QmAYRdcvdfbG8olPS8tZ8SX6luBaRameuIxyTFEs_L-6lE5PwkxYq48mKMup7cZWi3WNa147TMYw8rC0VJ33ZFbwaqn6iNlHzq95Z3q-wPugYmITaYD-6nDEN_Eg0BI0i_swgk7f9Kpq5r1S1sJudrI_TTpeAE3PkTipuMD3FNOhfJxXIyrbdLFGeT9TCkQvX5Ak50JpcOTP_M-bAui2pek5n2SryLoBsscYYE6I176U"/>
+<div class="absolute bottom-1 right-2 font-caption-sm text-caption-sm text-secondary uppercase tracking-widest">TIER V</div>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">DRAGON GUARD</h4>
+<span class="font-caption-sm text-caption-sm text-secondary">Special: Flame Deflection</span>
+</div>
+<button class="h-9 w-full bg-surface-container-high hover:bg-surface-bright text-on-surface rounded font-label-tactical text-caption-sm uppercase flex items-center justify-center gap-1 active:scale-95 transition-all" onclick="inspectWeapon('DRAGON GUARD', 'Impervious fortress wall that completely negates kinetic shock from warhammers.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>INSPECT ARTIFACT</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 5. BATTLE HUD PREVIEW (In-Game Combat Interface Mockup) -->
+<section class="w-full px-gutter-mobile py-space-xl flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-2xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-secondary">INGAME TELEMETRY</span>
+</div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile uppercase text-on-surface tracking-wide">
+        COMBAT HUD INTERFACE
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Zero firearms. Pure lethal blade mechanics, active stamina control, parry triggers, and dynamic directional combat feedback.
+      </p>
+</div>
+<!-- Gameplay Viewport Simulation Card -->
+<div class="relative w-full h-[460px] rounded overflow-hidden shadow-2xl bg-surface-container-lowest">
+<!-- Combat Scene Placeholder -->
+<img class="w-full h-full object-cover filter brightness-90" data-alt="First-person / close third-person immersive camera angle of a warrior blocking an incoming sparks-flying broadsword attack in burning castle corridor, dark gritty visceral tone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2Zds621HlLDKEP49FqNZsJtNg7btnnoxosuvkLB0JUGn9OaqX49lQRivTMWWE_Fu_AkH9aK3Bow334d-Qso8KRV0Cb3m-yQBs_5YMh5Pilv_wq1nISSxtUvNzGh9IN64Da69U8J1-r5_ocnbbieaw5IyU5Tc1sOFgZdnNgCL2ODGk2VA7ZOEiU7mYG8Ax9cbWfahaam1FA0cEidhcxTY-yXlTEHuuA7X_gvg87N7kH3k6-dMWqe1z"/>
+<!-- Dynamic Hit Splatter Vignette -->
+<div class="absolute inset-0 pointer-events-none shadow-[inset_0_0_70px_rgba(220,38,38,0.5)]"></div>
+<!-- TOP HUD OVERLAY BAR -->
+<div class="absolute top-3 inset-x-3 flex items-start justify-between z-20">
+<!-- Vitals Stack -->
+<div class="flex flex-col gap-1 w-44">
+<!-- HP Bar -->
+<div class="flex items-center justify-between text-[10px] font-stat-mono">
+<span class="text-primary uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">favorite</span> HP</span>
+<span class="text-on-surface">820 / 1000</span>
+</div>
+<div class="w-full h-2.5 rounded bg-surface-container-lowest/80 overflow-hidden p-0.5">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container rounded" style="width: 82%;"></div>
+</div>
+<!-- Armour Integrity -->
+<div class="flex items-center justify-between text-[10px] font-stat-mono">
+<span class="text-secondary uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">shield</span> ARMOUR</span>
+<span class="text-on-surface">94%</span>
+</div>
+<div class="w-full h-1.5 rounded bg-surface-container-lowest/80 overflow-hidden">
+<div class="h-full bg-secondary rounded" style="width: 94%;"></div>
+</div>
+<!-- Stamina Gauge -->
+<div class="flex items-center justify-between text-[10px] font-stat-mono">
+<span class="text-on-surface-variant uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">bolt</span> STAMINA</span>
+<span class="text-on-surface">65%</span>
+</div>
+<div class="w-full h-1.5 rounded bg-surface-container-lowest/80 overflow-hidden">
+<div class="h-full bg-surface-bright rounded" style="width: 65%;"></div>
+</div>
+</div>
+<!-- Center Match Counter -->
+<div class="px-space-xs py-1 rounded bg-surface-container-lowest/90 backdrop-blur-md flex items-center gap-space-xs">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">skull</span>
+<span class="font-stat-mono text-caption-sm text-primary font-bold">14 ALIVE</span>
+</div>
+<span class="text-surface-container-highest">|</span>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]">swords</span>
+<span class="font-stat-mono text-caption-sm text-secondary font-bold">7 KILLS</span>
+</div>
+</div>
+<!-- Radial Compass / Mini Radar -->
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest/90 backdrop-blur-md flex items-center justify-center relative shadow-lg">
+<span class="font-stat-mono text-[9px] text-primary absolute top-1 font-bold">N</span>
+<div class="w-2 h-2 rounded-full bg-primary-container animate-ping"></div>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">navigation</span>
+</div>
+</div>
+<!-- DIRECTIONAL ATTACK INDICATOR (Center Screen) -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-24 h-24 rounded-full border border-primary/30 flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-primary text-[28px] drop-shadow-[0_0_8px_rgba(220,38,38,1)]">close</span>
+</div>
+</div>
+<!-- BOTTOM MOBILE TOUCH CONTROLS -->
+<div class="absolute bottom-3 inset-x-3 flex items-end justify-between z-20">
+<!-- Virtual Movement Stick -->
+<div class="w-20 h-20 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center border-none">
+<div class="w-9 h-9 rounded-full bg-surface-container-high/90 flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[16px] text-on-surface">drag_pan</span>
+</div>
+</div>
+<!-- Tactical Melee Action Cluster -->
+<div class="flex flex-col items-end gap-2">
+<!-- Top Row: Parry & Dodge -->
+<div class="flex gap-2">
+<button class="w-12 h-12 rounded-full bg-surface-container-high/90 backdrop-blur-md text-secondary flex flex-col items-center justify-center active:scale-90 transition-transform shadow-lg" onclick="triggerHapticAction('BLOCK / PARRY TRIGGERED!')">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span class="text-[8px] font-label-tactical uppercase">PARRY</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-high/90 backdrop-blur-md text-on-surface flex flex-col items-center justify-center active:scale-90 transition-transform shadow-lg" onclick="triggerHapticAction('EVASIVE ROLL EXECUTED!')">
+<span class="material-symbols-outlined text-[18px]">sprint</span>
+<span class="text-[8px] font-label-tactical uppercase">DODGE</span>
+</button>
+</div>
+<!-- Bottom Row: Heavy & Primary Slash Button -->
+<div class="flex items-center gap-2">
+<button class="w-12 h-12 rounded-full bg-surface-container-high/90 backdrop-blur-md text-primary flex flex-col items-center justify-center active:scale-90 transition-transform shadow-lg" onclick="triggerHapticAction('HEAVY GUARD-BREAK STRIKE!')">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span class="text-[8px] font-label-tactical uppercase">HEAVY</span>
+</button>
+<button class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-container to-on-primary text-on-primary-container flex flex-col items-center justify-center active:scale-90 transition-transform shadow-[0_0_24px_rgba(220,38,38,0.8)]" onclick="triggerHapticAction('PRIMARY RUNIC SLASH HIT!')">
+<span class="material-symbols-outlined text-[24px]">swords</span>
+<span class="text-[9px] font-label-tactical uppercase tracking-wider">SLASH</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Toast Indicator Overlay -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-space-md py-space-xs rounded bg-surface-container-lowest/95 text-primary font-label-tactical text-caption-sm uppercase tracking-widest pointer-events-none opacity-0 transition-opacity duration-200" id="combat-toast">
+        PARRY ACTIVE
+      </div>
+</div>
+</section>
+<!-- 6. COMBAT SYSTEM SHOWCASE (Master the Blade) -->
+<section class="w-full px-gutter-mobile py-space-xl flex flex-col gap-space-md bg-surface-container-lowest">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-2xs text-primary">
+<span class="material-symbols-outlined text-[18px]">sports_martial_arts</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-primary">MARTIAL COMBAT ARTS</span>
+</div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile uppercase text-on-surface tracking-wide">
+        MASTER THE BLADE
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Fluid precision combat driven by physics, counter frames, poise limits, and lethal stamina punishes.
+      </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded bg-surface-container flex items-start gap-space-sm shadow-md">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">FRAME-PERFECT PARRY</h4>
+<p class="font-body-md text-caption-sm text-on-surface-variant mt-1">
+            Tap block 150ms before enemy steel impacts. Staggers the attacker, granting 100% critical strike riposte.
+          </p>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex items-start gap-space-sm shadow-md">
+<div class="w-10 h-10 rounded bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">GUARD BREAKER</h4>
+<p class="font-body-md text-caption-sm text-on-surface-variant mt-1">
+            Charge heavy attacks against turtling opponents holding shields. Shatters stamina bars and causes poise collapse.
+          </p>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex items-start gap-space-sm shadow-md">
+<div class="w-10 h-10 rounded bg-surface-bright text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">motion_photos_on</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">DIRECTIONAL COMBOS</h4>
+<p class="font-body-md text-caption-sm text-on-surface-variant mt-1">
+            Chain side slashes into overhead thrusts. Fluid combo strings bypass predictable blocking angles.
+          </p>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex items-start gap-space-sm shadow-md">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">bloodtype</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">RUNIC EXECUTION</h4>
+<p class="font-body-md text-caption-sm text-on-surface-variant mt-1">
+            When an enemy drops below 15% health and stumbles, trigger the cinematic bloodstone finisher instantly.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. GAME MODES -->
+<section class="w-full px-gutter-mobile py-space-xl flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-2xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">military_tech</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-secondary">ENGAGEMENT THEATRES</span>
+</div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile uppercase text-on-surface tracking-wide">
+        WARFARE MODES
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Select your battlefield protocol. From solo survival arenas to tactical fortress sieges.
+      </p>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Mode 1: Last Warrior -->
+<div class="p-space-md rounded bg-surface-container-low flex flex-col gap-space-xs shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase text-primary">LAST WARRIOR</span>
+<span class="font-stat-mono text-caption-sm px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container">50 PLAYERS • SOLO</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Drop into the expanding Ashen Eclipse fog. Scavenge ancient weapons and survive until only one warrior remains breathing.
+        </p>
+<div class="flex items-center justify-between mt-space-2xs pt-space-xs">
+<span class="font-stat-mono text-caption-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> QUEUE: ~12s
+          </span>
+<button class="h-10 px-space-md bg-primary-container text-on-primary-container rounded font-label-tactical text-caption-sm uppercase tracking-wider flex items-center gap-1 active:scale-95 transition-all shadow-[0_0_12px_rgba(220,38,38,0.4)]">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span> DEPLOY SOLO
+          </button>
+</div>
+</div>
+<!-- Mode 2: Duel -->
+<div class="p-space-md rounded bg-surface-container-low flex flex-col gap-space-xs shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase text-secondary">HONOR DUEL (1v1)</span>
+<span class="font-stat-mono text-caption-sm px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container">RANKED ELO</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Pure competitive swordsmanship in an enclosed sand ring. Best of 5 rounds. No potions, no escape.
+        </p>
+<div class="flex items-center justify-between mt-space-2xs pt-space-xs">
+<span class="font-stat-mono text-caption-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> QUEUE: ~5s
+          </span>
+<button class="h-10 px-space-md bg-secondary-container text-on-secondary-container rounded font-label-tactical text-caption-sm uppercase tracking-wider flex items-center gap-1 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">swords</span> DUEL NOW
+          </button>
+</div>
+</div>
+<!-- Mode 3: Castle Siege -->
+<div class="p-space-md rounded bg-surface-container-low flex flex-col gap-space-xs shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">CASTLE SIEGE</span>
+<span class="font-stat-mono text-caption-sm px-space-xs py-0.5 rounded bg-surface-bright text-on-surface">16v16 OBJECTIVE</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Battering rams, burning oil cauldrons, and throne room breaches. Defend or topple the keep.
+        </p>
+<div class="flex items-center justify-between mt-space-2xs pt-space-xs">
+<span class="font-stat-mono text-caption-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> QUEUE: ~28s
+          </span>
+<button class="h-10 px-space-md bg-surface-container-high text-on-surface rounded font-label-tactical text-caption-sm uppercase tracking-wider flex items-center gap-1 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">fort</span> JOIN SIEGE
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. COMPETITIVE RANKINGS & LEADERBOARDS -->
+<section class="w-full px-gutter-mobile py-space-xl flex flex-col gap-space-md bg-surface-container-lowest">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-2xs text-primary">
+<span class="material-symbols-outlined text-[18px]">trophy</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-primary">HALL OF CHAMPIONS</span>
+</div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile uppercase text-on-surface tracking-wide">
+        SEASON IV RANKINGS
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Global warrior prestige ledger updated after every decisive battlefield climax.
+      </p>
+</div>
+<!-- Leaderboard Stack -->
+<div class="flex flex-col gap-space-xs">
+<!-- Rank 1 -->
+<div class="p-space-sm rounded bg-surface-container-high flex items-center justify-between shadow-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container font-stat-mono text-stat-mono flex items-center justify-center font-bold">
+            01
+          </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase text-secondary">NIGHTWOLF</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant">2,410 Victories • 9,820 Kills</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-stat-mono text-stat-mono text-primary font-bold">4,950 ELO</span>
+<span class="font-caption-sm text-caption-sm text-secondary">38.4% WIN</span>
+</div>
+</div>
+<!-- Rank 2 -->
+<div class="p-space-sm rounded bg-surface-container flex items-center justify-between shadow-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-bright text-on-surface font-stat-mono text-stat-mono flex items-center justify-center font-bold">
+            02
+          </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">IRONKING</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant">2,180 Victories • 8,940 Kills</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-stat-mono text-stat-mono text-primary font-bold">4,820 ELO</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant">35.1% WIN</span>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="p-space-sm rounded bg-surface-container flex items-center justify-between shadow-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-bright text-on-surface font-stat-mono text-stat-mono flex items-center justify-center font-bold">
+            03
+          </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">REDFANG</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant">1,950 Victories • 8,110 Kills</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-stat-mono text-stat-mono text-primary font-bold">4,710 ELO</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant">33.7% WIN</span>
+</div>
+</div>
+<!-- Rank 4 -->
+<div class="p-space-sm rounded bg-surface-container-low flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant font-stat-mono text-stat-mono flex items-center justify-center">
+            04
+          </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface-variant">SHADOWBLADE</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant">1,820 Victories • 7,650 Kills</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-stat-mono text-stat-mono text-primary font-bold">4,590 ELO</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant">32.0% WIN</span>
+</div>
+</div>
+<!-- Rank 5 -->
+<div class="p-space-sm rounded bg-surface-container-low flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant font-stat-mono text-stat-mono flex items-center justify-center">
+            05
+          </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface-variant">WARLORD</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant">1,740 Victories • 7,100 Kills</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-stat-mono text-stat-mono text-primary font-bold">4,480 ELO</span>
+<span class="font-caption-sm text-caption-sm text-on-surface-variant">30.5% WIN</span>
+</div>
+</div>
+</div>
+<button class="h-12 w-full bg-surface-container hover:bg-surface-bright text-on-surface rounded font-label-tactical text-label-tactical uppercase tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">format_list_numbered</span>
+<span>VIEW FULL 500 LEADERBOARD</span>
+</button>
+</section>
+<!-- 9. PLAYER PROFILE & TROPHY HALL -->
+<section class="w-full px-gutter-mobile py-space-xl flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-2xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">military_tech</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-secondary">WAR RECORD</span>
+</div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile uppercase text-on-surface tracking-wide">
+        WARRIOR PROFILE
+      </h2>
+</div>
+<!-- Identity & Level Banner -->
+<div class="p-space-md rounded bg-surface-container-low flex flex-col gap-space-md shadow-2xl relative overflow-hidden">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-16 h-16 rounded-full overflow-hidden shrink-0 bg-primary">
+<img class="w-full h-full object-cover" data-alt="Portrait avatar icon of a battered scarred medieval crusader knight in full black helm with glowing crimson eyes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeYc2dsUe7HgZUbOjc9pX9yk2AuXRBmeFIGxgOeaB0o10wEpMwwlDuDbYT5KgDtV__ey1l9S2KAHM3x2MZuB3ikfL0bvKcHGfBCBAYMIpHKEQKwUG-ZHeBSP-t6iLVxWEaE_H1yzIQRk913jIYPhHDmPlngN92MQ-lWCufaRatCYv91P89VIu3lsuzLekTnILNz7tAwIm-pKNgmOtmks1QdAbrwo5w6fwWUnVlsEWA-fDgEaVM3Bnq"/>
+<div class="absolute bottom-0 inset-x-0 bg-primary-container text-on-primary-container text-[8px] font-stat-mono uppercase text-center font-bold">LVL 68</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-2xs">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface truncate">WARLORD VANGUARD</h3>
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+</div>
+<span class="font-caption-sm text-caption-sm text-secondary uppercase">GRANDMASTER ARENA KNIGHT</span>
+<!-- XP Progress -->
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest mt-1 overflow-hidden">
+<div class="h-full bg-secondary" style="width: 74%;"></div>
+</div>
+</div>
+</div>
+<!-- Combat Records 3-Column Bento -->
+<div class="grid grid-cols-3 gap-space-2xs text-center">
+<div class="p-space-xs rounded bg-surface-container flex flex-col">
+<span class="font-stat-mono text-stat-mono text-on-surface font-bold">1,420</span>
+<span class="font-caption-sm text-[10px] text-on-surface-variant uppercase">BATTLES</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container flex flex-col">
+<span class="font-stat-mono text-stat-mono text-primary font-bold">412</span>
+<span class="font-caption-sm text-[10px] text-on-surface-variant uppercase">VICTORIES</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container flex flex-col">
+<span class="font-stat-mono text-stat-mono text-secondary font-bold">3,890</span>
+<span class="font-caption-sm text-[10px] text-on-surface-variant uppercase">ELIMINATIONS</span>
+</div>
+</div>
+<!-- Preferred Equipment Loadout -->
+<div class="p-space-xs rounded bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">swords</span>
+<div class="flex flex-col">
+<span class="font-caption-sm text-caption-sm text-on-surface-variant uppercase">FAVORED LOADOUT</span>
+<span class="font-stat-mono text-caption-sm text-on-surface font-bold">Nightfall Blade + Dragon Guard</span>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container font-label-tactical text-[9px] uppercase">EQUIPPED</span>
+</div>
+<!-- Trophies & Feats Carousel -->
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-tactical text-caption-sm uppercase text-secondary tracking-wider">TROPHY HALL FEATS</span>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-space-xs rounded bg-surface-container-high flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">bloodtype</span>
+<div class="flex flex-col">
+<span class="font-label-tactical text-[10px] uppercase text-on-surface font-bold">FIRST BLOOD</span>
+<span class="text-[9px] text-on-surface-variant">1st Melee Victory</span>
+</div>
+</div>
+<div class="p-space-xs rounded bg-surface-container-high flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">military_tech</span>
+<div class="flex flex-col">
+<span class="font-label-tactical text-[10px] uppercase text-on-surface font-bold">BLADE MASTER</span>
+<span class="text-[9px] text-on-surface-variant">100 Slaying Blows</span>
+</div>
+</div>
+<div class="p-space-xs rounded bg-surface-container-high flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px]">heart_broken</span>
+<div class="flex flex-col">
+<span class="font-label-tactical text-[10px] uppercase text-on-surface font-bold">LAST STANDING</span>
+<span class="text-[9px] text-on-surface-variant">Won with &lt;10% HP</span>
+</div>
+</div>
+<div class="p-space-xs rounded bg-surface-container-high flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">shield</span>
+<div class="flex flex-col">
+<span class="font-label-tactical text-[10px] uppercase text-on-surface font-bold">UNBREAKABLE</span>
+<span class="text-[9px] text-on-surface-variant">Blocked 50 Heavy Strikes</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. CINEMATIC FOOTER -->
+<footer class="w-full px-gutter-mobile py-space-xl bg-surface-container-lowest flex flex-col gap-space-md border-none mt-space-md">
+<div class="flex flex-col items-center text-center gap-space-xs">
+<img alt="BLADEBOUND Crest Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XzOSNLh_IPhxiJzdDTK997dnVpUBuAk_1HpvuN68LtvWc797IQ_n08Fo3gYhixPuHhl_iPJteZ6UlmROElkgI3hLIzz_d30H673LoxV6EMderc-to92T_csvvw1shr6Ef5CRvgr73HyCFuB8bmAF00pu4WtY7En1QMu5ep6WQyE8vHt1nVtkbeJL1Q368czju55qfyTdNokA-hqVonmAfvmLrWS53foa0bhDqwCQshv22uRRoKyPS4F-I"/>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-wider">BLADEBOUND</h3>
+<p class="font-caption-sm text-caption-sm text-secondary uppercase tracking-widest">
+        ONE BATTLEFIELD. ONE BLADE. ONE SURVIVOR.
+      </p>
+</div>
+<!-- Quick Navigation Links -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs text-center">
+<a class="font-label-tactical text-caption-sm uppercase text-on-surface-variant hover:text-primary py-1" href="#">THE BATTLEFIELD</a>
+<a class="font-label-tactical text-caption-sm uppercase text-on-surface-variant hover:text-primary py-1" href="#">WARRIORS</a>
+<a class="font-label-tactical text-caption-sm uppercase text-on-surface-variant hover:text-primary py-1" href="#">ARMOURY</a>
+<a class="font-label-tactical text-caption-sm uppercase text-on-surface-variant hover:text-primary py-1" href="#">RANKINGS</a>
+<a class="font-label-tactical text-caption-sm uppercase text-on-surface-variant hover:text-primary py-1" href="#">GAME MODES</a>
+<a class="font-label-tactical text-caption-sm uppercase text-on-surface-variant hover:text-primary py-1" href="#">WAR SANCTUM</a>
+<a class="font-label-tactical text-caption-sm uppercase text-on-surface-variant hover:text-primary py-1" href="#">PRIVACY CODEX</a>
+<a class="font-label-tactical text-caption-sm uppercase text-on-surface-variant hover:text-primary py-1" href="#">TERMS OF STEEL</a>
+</div>
+<!-- Medieval Community Hub Banners -->
+<div class="flex items-center justify-center gap-space-md py-space-xs text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1 font-label-tactical text-caption-sm uppercase" href="#">
+<span class="material-symbols-outlined text-[20px]">forum</span> DISCORD
+      </a>
+<a class="hover:text-secondary transition-colors flex items-center gap-1 font-label-tactical text-caption-sm uppercase" href="#">
+<span class="material-symbols-outlined text-[20px]">live_tv</span> TWITCH
+      </a>
+<a class="hover:text-primary transition-colors flex items-center gap-1 font-label-tactical text-caption-sm uppercase" href="#">
+<span class="material-symbols-outlined text-[20px]">smart_display</span> YOUTUBE
+      </a>
+</div>
+<div class="text-center font-caption-sm text-[10px] text-on-surface-variant/60 leading-relaxed">
+      © 2025 BLADEBOUND STUDIOS. ALL RIGHTS RESERVED. REALM SECTOR EU-7 ONSLAUGHT PROTOCOL ACTIVE. DESIGNED FOR DARK FANTASY COMBAT ENTHUSIASTS.
+    </div>
+</footer>
+</div>
+<!-- Interactive Client Scripts for Real-time Micro-Interactions -->
+<script>
+  // Tactical Arena Map Zone Switcher
+  const zones = {
+    'iron-fortress': {
+      name: 'THE IRON FORTRESS',
+      hazard: 'DEFENSIVE CHOKE',
+      hazardColor: 'bg-secondary-container text-on-secondary-container',
+      loot: 'SIEGE ARMOUR (T4)',
+      choke: 'NARROW GATEWAYS',
+      desc: 'High fortified stone bastion towering above the misty crags. Massive gatehouse with portcullis traps and high vantage murder holes.',
+      icon: 'fort'
+    },
+    'bloodstone': {
+      name: 'BLOODSTONE VALLEY',
+      hazard: 'HIGH CASUALTY',
+      hazardColor: 'bg-primary-container text-on-primary-container',
+      loot: 'CURSED WEAPONS (T5)',
+      choke: 'OPEN TRENCH CLASH',
+      desc: 'Sunken crimson canyon drenched in crimson mists. No defensive covers. Rapid warrior encounters with high-yield bloodstone veins.',
+      icon: 'local_fire_department'
+    },
+    'forest': {
+      name: 'THE FORGOTTEN FOREST',
+      hazard: 'AMBUSH RISK',
+      hazardColor: 'bg-surface-bright text-on-surface',
+      loot: 'LIGHTWEIGHT RUNICS (T3)',
+      choke: 'DENSE PINE COVER',
+      desc: 'Ancient petrified pines shrouded in rolling fog. Footstep sound radius is halved, creating the premier drop zone for stealth dualists.',
+      icon: 'forest'
+    },
+    'ruins': {
+      name: "KING'S RUINS",
+      hazard: 'FATAL HAZARD',
+      hazardColor: 'bg-primary-container text-on-primary-container',
+      loot: 'MYTHIC RELICS (T5)',
+      choke: 'CROSSFIRE APEX',
+      desc: 'Colosseum of fractured obsidian masonry and royal crypt shrines. Center spawn point for Tier-V relic weapons. High skirmish frequency within seconds of drop.',
+      icon: 'swords'
+    },
+    'bridge': {
+      name: 'SHADOW BRIDGE',
+      hazard: 'ENVIRONMENTAL FALL',
+      hazardColor: 'bg-secondary-container text-on-secondary-container',
+      loot: 'ANCIENT TALISMANS (T4)',
+      choke: 'SINGLE-FILE CROSSING',
+      desc: 'Treacherous narrow stone span arching over a bottomless void. One mistimed dodge or shield bash sends opponents into the abyss.',
+      icon: 'alt_route'
+    }
+  };
+
+  function updateZoneInfo(key) {
+    const z = zones[key];
+    if(!z) return;
+    document.getElementById('zone-name').textContent = z.name;
+    document.getElementById('zone-desc').textContent = z.desc;
+    document.getElementById('zone-hazard').textContent = z.hazard;
+    document.getElementById('zone-hazard').className = 'px-space-xs py-0.5 rounded font-label-tactical text-caption-sm uppercase ' + z.hazardColor;
+    document.getElementById('zone-loot').textContent = z.loot;
+    document.getElementById('zone-choke').textContent = z.choke;
+    document.getElementById('zone-icon').textContent = z.icon;
+  }
+
+  // Warrior Archetype Selector Data & Script
+  const warriors = {
+    knight: {
+      title: 'THE KNIGHT',
+      archetype: 'BALANCED VANGUARD',
+      weapon: 'Bastard Sword & Kite Shield',
+      ability: 'ABILITY: IRON VOW',
+      atk: 78,
+      def: 82,
+      spd: 70,
+      diff: 'DIFFICULTY: NOVICE'
+    },
+    berserker: {
+      title: 'THE BERSERKER',
+      archetype: 'SAVAGE SLAYER',
+      weapon: 'Dual Broadaxes & Heavy Claymore',
+      ability: 'ABILITY: BLOOD FRENZY',
+      atk: 96,
+      def: 45,
+      spd: 84,
+      diff: 'DIFFICULTY: EXPERT'
+    },
+    sentinel: {
+      title: 'THE SENTINEL',
+      archetype: 'FORTRESS TANK',
+      weapon: 'Tower Shield & Heavy Flanged Mace',
+      ability: 'ABILITY: BASTION WALL',
+      atk: 60,
+      def: 98,
+      spd: 52,
+      diff: 'DIFFICULTY: NOVICE'
+    },
+    duelist: {
+      title: 'THE DUELIST',
+      archetype: 'RAPID RIPOSTE',
+      weapon: 'Needle Rapier & Parrying Dagger',
+      ability: 'ABILITY: PHANTOM RIPOSTE',
+      atk: 88,
+      def: 58,
+      spd: 95,
+      diff: 'DIFFICULTY: MASTER'
+    },
+    warden: {
+      title: 'THE WARDEN',
+      archetype: 'COLOSSAL JUGGERNAUT',
+      weapon: 'Zweihänder & Full Plate Armor',
+      ability: 'ABILITY: EARTHSHATTER',
+      atk: 92,
+      def: 88,
+      spd: 50,
+      diff: 'DIFFICULTY: VETERAN'
+    }
+  };
+
+  function selectWarrior(key) {
+    const w = warriors[key];
+    if(!w) return;
+    document.getElementById('warrior-title').textContent = w.title;
+    document.getElementById('warrior-archetype').textContent = w.archetype;
+    document.getElementById('warrior-weapon').textContent = w.weapon;
+    document.getElementById('warrior-ability').textContent = w.ability;
+
+    document.getElementById('val-atk').textContent = w.atk + ' / 100';
+    document.getElementById('bar-atk').style.width = w.atk + '%';
+
+    document.getElementById('val-def').textContent = w.def + ' / 100';
+    document.getElementById('bar-def').style.width = w.def + '%';
+
+    document.getElementById('val-spd').textContent = w.spd + ' / 100';
+    document.getElementById('bar-spd').style.width = w.spd + '%';
+
+    // Toggle active tab classes
+    ['knight', 'berserker', 'sentinel', 'duelist', 'warden'].forEach(k => {
+      const tab = document.getElementById('tab-' + k);
+      if(tab) {
+        if(k === key) {
+          tab.className = 'px-space-md py-space-xs rounded bg-primary-container text-on-primary-container font-label-tactical text-label-tactical uppercase whitespace-nowrap active:scale-95 transition-all';
+        } else {
+          tab.className = 'px-space-md py-space-xs rounded bg-surface-container text-on-surface-variant font-label-tactical text-label-tactical uppercase whitespace-nowrap active:scale-95 transition-all';
+        }
+      }
+    });
+  }
+
+  function lockInWarrior() {
+    const btn = document.getElementById('btn-equip-warrior');
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">verified</span><span>CHAMPION LOCKED & READY</span>';
+    btn.classList.remove('from-primary-container', 'to-on-primary');
+    btn.classList.add('bg-secondary-container', 'text-on-secondary-container');
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done_all</span><span>SELECT THIS WARRIOR</span>';
+      btn.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+      btn.classList.add('from-primary-container', 'to-on-primary');
+    }, 2500);
+  }
+
+  function triggerHapticAction(msg) {
+    const toast = document.getElementById('combat-toast');
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.remove('opacity-0');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0');
+    }, 1200);
+  }
+
+  function inspectWeapon(name, desc) {
+    triggerHapticAction(name + ': ' + desc);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary scale-105"><div class="h-16 px-gutter-mobile flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center w-12 h-12 transition-transform text-primary scale-105" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">fort</span><span class="font-label-tactical text-label-tactical uppercase text-[9px]">SANCTUM</span></a><a class="flex flex-col items-center justify-center w-12 h-12 text-on-surface-variant hover:text-on-surface transition-transform active:scale-95" data-path="battlefield" href="#"><span class="material-symbols-outlined text-[22px]">explore</span><span class="font-label-tactical text-label-tactical uppercase text-[9px]">WAR</span></a><a class="flex flex-col items-center justify-center w-12 h-12 text-on-surface-variant hover:text-on-surface transition-transform active:scale-95" data-path="armoury" href="#"><span class="material-symbols-outlined text-[22px]">hardware</span><span class="font-label-tactical text-label-tactical uppercase text-[9px]">FORGE</span></a><a class="flex flex-col items-center justify-center w-12 h-12 text-on-surface-variant hover:text-on-surface transition-transform active:scale-95" data-path="combat-hud" href="#"><span class="material-symbols-outlined text-[22px]">speed</span><span class="font-label-tactical text-label-tactical uppercase text-[9px]">HUD</span></a><a class="flex flex-col items-center justify-center w-12 h-12 text-on-surface-variant hover:text-on-surface transition-transform active:scale-95" data-path="warrior-profile" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-tactical text-label-tactical uppercase text-[9px]">KNIGHT</span></a></div></nav></body></html>

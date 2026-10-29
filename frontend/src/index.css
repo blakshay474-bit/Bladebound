@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    width: 100vw;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #121316;
+    color: #e3e2e6;
+    overflow-x: hidden;
+  }
+  
+  body {
+    overscroll-behavior-y: none;
+  }
+  
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  /* Custom scrollbars hidden for game HUD aesthetic */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom Tactical Chamfer Clips & Game UI Effects */
+.clip-chamfer-sm {
+  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+}
+
+.clip-chamfer-md {
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.clip-chamfer-lg {
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+}
+
+/* Gold Gradient Text Clip */
+.text-gold-gradient {
+  background: linear-gradient(180deg, #FDE68A 0%, #D97706 70%, #78350F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Crimson Glow Shadow Utilities */
+.shadow-bloodstone {
+  box-shadow: 0 0 24px -4px rgba(220, 38, 38, 0.45), inset 0 0 12px rgba(153, 0, 17, 0.3);
+}
+
+.shadow-relic-gold {
+  box-shadow: 0 0 28px -4px rgba(217, 119, 6, 0.4), inset 0 0 10px rgba(245, 158, 11, 0.2);
+}
